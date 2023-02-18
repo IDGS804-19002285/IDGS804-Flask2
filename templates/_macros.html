@@ -1,0 +1,34 @@
+
+{% macro render_input(name,placeholder,type='text') %}
+
+<div class="control-group">
+    <label for="{{name}}" class="control-label">{{placeholder}}</label>
+    <div class="control">
+        <input type="{{text}}" name="{{name}}" class="input-xlarge"
+        placeholder="{{placeholder}}">
+    </div>
+</div>
+
+{%endmacro%}
+
+
+{% macro render_Firld(field) %}
+
+<div class="control-group">
+    <div class="controls">
+        {{field.label}}
+
+        {{field(**kwargs)|safe}}
+    </div>
+</div>
+
+{%endmacro%}
+
+{% macro CajasDinamicas(name,n) %}
+<div class="control-group">
+    <label for="{{name}}" class="control-label">Numeros {{n}}</label>
+    <div class="controls">
+        <input type="number" name="{{name}}" class="input_xlarge" required>
+    </div>
+</div>
+{%endmacro%}

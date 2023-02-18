@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    
+    <h2>promedio: {{p}}</h2>
+    <h2>Numero mayor: {{ma}}</h2>
+    <h2>Numero menor: {{me}}</h2>
+
+    <hr>
+    {% for obj in r %}
+        <h4>El {{ loop.index }} Se repite: {{obj}} 
+            {% if obj == 1 %}
+                vez
+            {% else %}
+                veces
+            {% endif %}
+        </h4>
+    {% endfor %}
+
+{% endblock %}

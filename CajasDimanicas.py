@@ -2,7 +2,7 @@ from flask import Flask,render_template,request
 app = Flask(__name__)
 
 
-# sumar, promedio, mayor, menor y cuantas veces se repite 
+
 @app.route("/CajasDinamicas", methods=['GET','POST'])
 def CajasDinamicas():
     if request.method == 'POST':

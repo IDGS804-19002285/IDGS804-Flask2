@@ -1,18 +1,18 @@
 {% block content %}
 
 <div class="col-xs-6">
-    {%from "_macros.html" import render_Firld%}
+    {%from "_macros.html" import render_t%}
     <form action="" method="post" novalidate>
         {{form.csrf_token}}
         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         <div class="row control-group">
             <div class="form-group">
-                {{render_Firld(form.matricula)}}
+                {{render_t(form.matricula)}}
             </div>
         </div>
-        {{render_Firld(form.nombre)}}
-        {{render_Firld(form.apaterno)}}
-        {{render_Firld(form.email)}}
+        {{render_t(form.nombre)}}
+        {{render_t(form.apaterno)}}
+        {{render_t(form.email)}}
         <input type="submit" id="al" name="al" value="Registrar">
     </form>
 </div>

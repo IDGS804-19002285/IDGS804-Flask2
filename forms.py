@@ -22,10 +22,10 @@ class UserForm(Form):
     email=EmailField('Correo')
 
 
-class LoginForm(Form):
-    username = StringField('Usuario',
-    [validators.DataRequired(message='El campo es requerido'),
-     validators.length(min=5,max=10,message='Ingrese minimo 5 maximo 10')])
-    password = PasswordField('Contraseña',
-    [validators.DataRequired(message='El campo nombre es requerido'),
-     validators.length(min=5,max=10,message='Ingrese minimo 5 maximo 10')])
+# class LoginForm(Form):
+#     username = StringField('Usuario',
+#     [validators.DataRequired(message='El campo es requerido'),
+#      validators.length(min=5,max=10,message='Ingrese minimo 5 maximo 10')])
+#     password = PasswordField('Contraseña',
+#     [validators.DataRequired(message='El campo nombre es requerido'),
+#      validators.length(min=5,max=10,message='Ingrese minimo 5 maximo 10')])

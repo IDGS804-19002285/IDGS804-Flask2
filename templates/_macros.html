@@ -46,24 +46,19 @@
 {%endmacro%}
 
 {% macro render_t(field) %}
-
-<div class="control-group">
-    <div class="controls">
-        {{field.label}}
-        {{field(**kwargs)|safe}}
+    <div class="control-group">
+        <div class="controls">
+            {{field.label}}        
+            {{field(**kwargs)|safe}}
+        </div>
     </div>
-</div>
-
-{%if field.errors%}
-
-<ul>
-    {%for error in field.errors%}
-    <li style="color:red">
-        {{ error }}
-    </li>
-    {% endfor %}
-</ul>
-
-{% endif %}
-
-{%endmacro%}
+    {% if field.errors %}
+        <ul>
+            {% for error in field.errors %}
+                <li style="color:red">
+                    {{error}}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}

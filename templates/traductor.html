@@ -1,25 +1,43 @@
+
+
 {% block content %}
-
 <div class="col-xs-6">
-    {%from "_macros.html" import render_t%}
-    <form action="" method="post" novalidate>
-        {{form.csrf_token}}
-        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
-        <div class="row control-group">
-            <div class="form-group">
-                {{render_t(form.matricula)}}
-            </div>
-        </div>
-        {{render_t(form.nombre)}}
-        {{render_t(form.apaterno)}}
-        {{render_t(form.email)}}
-        <input type="submit" id="al" name="al" value="Registrar">
+    {% from '_macros.html' import render_t %}
+    <form action="" method="post" novalidate id="gua">
+        {{render_t(formIn.esp)}} <br> 
+        {{render_t(formIn.ing)}} <br>
+        <input type="hidden" name="envio" value="gua">
+        <input type="submit" id="al1" name="al" value="Guardar" form="gua">
     </form>
-</div>
-<div class="col-md-4">
-    <h1>Matricula:{{datos[0]}}</h1><br>
-    <h1>Nombre:{{datos[1]}}</h1>
-    <h1></h1>
-</div>
 
+    <form action="" method="post" novalidate id="tra">
+        <input type="hidden" name="envio" value="tra">
+        <div class="">
+            <h6>Traductor</h6>
+            <input type="radio" name='idioma' value='esp' class="pt-2" required checked>Español
+            <br>
+            <input type="radio" name='idioma' value='ing' class="pt-2">Ingles
+        </div>
+        <div class="w-25 d-inline-block">
+            {{render_t(formOut.pal)}}
+            <br>
+            <input type="submit" id="al2" name="al" value="Traducir" form="tra">
+        </div>
+        {% if pal2 != ''%}
+            <h4> {{pal2}}</h4>
+        {% else %}
+            <h4>No Existe</h4>
+        {%endif%}
+
+    </form>
+<!-- ------------------------------------------------------------------------------------------------ -->
+
+<div class="col-md-4">
+    <h6>{{datos[0]}}</h6>
+    <h6>{{datos[1]}}</h6>
+</div>
+</div>
+<script>
+    window.addEventListener('load', event => { document.getElementById('tra').reset(); });
+</script>
 {% endblock %}

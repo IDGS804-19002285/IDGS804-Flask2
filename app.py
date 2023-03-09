@@ -27,7 +27,7 @@ def Alumnos():
     return render_template("Alumnos.html", form=reg_alum,datos=datos)
 
 
-@app.route("/traducir", methods=['GET','POST'])
+@app.route("/traductor", methods=['GET','POST'])
 def traducir():
     req_in = traductor.traducirIn(request.form)
     req_out = traductor.traducirOut(request.form)
